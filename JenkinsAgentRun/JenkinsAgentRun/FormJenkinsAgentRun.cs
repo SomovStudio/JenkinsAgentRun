@@ -24,7 +24,8 @@ namespace JenkinsAgentRun
 
         public delegate void AddConsoleItem(String message);
         public AddConsoleItem myDelegate;
-        Process P;
+        public Process P;
+        private bool help;
 
         private bool CancelClose = true;
 
@@ -35,6 +36,7 @@ namespace JenkinsAgentRun
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            help = false;
             myDelegate = new AddConsoleItem(addConsoleItemMethod);
 
             try
@@ -210,8 +212,8 @@ namespace JenkinsAgentRun
                 //    writer = new StreamWriter(filename, false, Encoding.Default);
 
                 string readme = @"
-НАСТРОЙКА И ЗАПУСК АГЕНТА
-=========================
+СОЗДАНИЕ АГЕНТА
+===============================================================
 1. Открыть ""Настройки Jenkins"" http://localhost:8080/manage
 2. Перейти в ""Глобальные настройки безопасности"" http://localhost:8080/configureSecurity/
 3. В разделе Agents включить флаг TCP port for JNLP agents в состояние Случайный/Random
@@ -233,16 +235,37 @@ namespace JenkinsAgentRun
 	7.12 нажать кнопку Save
 8. Вернуться в ""Управление средами сборки"" http://localhost:8080/computer/
 9. В таблице нажать на proxy
-10. Несколько способов запуска агента
+===============================================================
+ЗАПУСК АГЕНТА
+===============================================================
+10. Jenkins предлогает несколько способов запуска агента
 	10.1 способ №1: выполнить команду
 		javaws http://localhost:8080/computer/proxy/slave-agent.jnlp
 		
 	10.2 способ №2: скачать файл agent.jar по ссылке http://localhost:8080/jnlpJars/agent.jar	и выполнить команду
 		java -jar agent.jar -jnlpUrl http://localhost:8080/computer/proxy/slave-agent.jnlp -secret 0000000000000000000000000000000000000000000000000000000000000000 -workDir ""C:\Program Files (x86)\Jenkins\workspace_proxy""
-		
-11. Настройка Job для работы с агентом
-	11.1 включить параметр ""Ограничить лейблы сборщиков, которые могут исполнять данную задачу""
-	11.2 в поле Label Expression ввести метку proxy
+
+11. Запуск агента с помощью JenkinsAgentRun
+	11.1 создайне папку, например C:\Jenkins и поместите в папку файлы:
+		agent.jar
+		slave-agent.jnlp
+		JenkinsAgentRun.exe
+	11.2 запустите программу JenkinsAgentRun.exe она создаст файл config.txt
+	11.3 введите в поля ранее полученные данные (пункт 10) и нажмите в меню ""Файл"" пункт ""Сохранить настройки""
+		- путь к приложению (java.exe)
+		- параметры языка (-Dfile.encoding=UTF8) для поддержки русского языка
+		- путь к файлу agent.jar (http://localhost:8080/jnlpJars/agent.jar)
+		- путь к файлу slave-agent.jnlp (http://localhost:8080/computer/proxy/slave-agent.jnlp)
+		- укажите secret
+		- укажите рабочую папку workDir
+	11.4 выполните запуск агента с помощью менб ""Действие"" пункт ""Запустить агента""
+	Если все поля были правильно заполнены агент будет запущен
+===============================================================
+НАСТРОЙКА ЗАДАЧИ
+===============================================================
+12. Настройка Job для работы с агентом
+	12.1 включить параметр ""Ограничить лейблы сборщиков, которые могут исполнять данную задачу""
+	12.2 в поле Label Expression ввести метку proxy
 ";
 
                 writer.Write(readme);
@@ -330,6 +353,29 @@ namespace JenkinsAgentRun
         private void сохранитьНастройкиToolStripMenuItem_Click(object sender, EventArgs e)
         {
             saveConfigFile();
+        }
+
+
+        private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (help == false)
+            {
+                FormHelp help = new FormHelp();
+                help.FormClosed += Help_FormClosed;
+                help.Shown += Help_Shown;
+                help.Show();
+            }
+            
+        }
+
+        private void Help_Shown(object sender, EventArgs e)
+        {
+            help = true;
+        }
+
+        private void Help_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            help = false;
         }
     }
 }
