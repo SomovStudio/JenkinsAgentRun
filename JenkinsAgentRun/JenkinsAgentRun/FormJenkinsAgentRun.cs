@@ -221,18 +221,18 @@ namespace JenkinsAgentRun
 5. Вернуться в ""Настройки Jenkins"" http://localhost:8080/manage
 6. Перейти в ""Управление средами сборки"" http://localhost:8080/computer/
 7. Нажать на кнопку ""Новый узел"" (New Node)
-	7.1 ввести наименование (например: proxy)
+	7.1 наименование (Name) (например: agent)
 	7.2 включить флаг Permanent Agent
 	7.3 нажать ОК
-	7.4 Описание: Тестирование с помощью BrowserMob Proxy
-	7.5 Количество процессов-исполнителей: 1
-	7.6 Корень удаленной ФС: C:\Program Files (x86)\Jenkins\workspace_proxy
-	7.7 Метки: proxy
-	7.8 Использование: Use this node as much as possible
-	7.9 Способ запуска: Launch agent via Java Web Start (все параметры оставить по умолчанию)
-	7.10 Доступность: Keep this agent online as much as possible
-	7.11 Node Properties: не включать флаги
-	7.12 нажать кнопку Save
+	7.4 Количество процессов-исполнителей (of executors): 2
+	7.5 Корень удаленной папки (Remote root directory): C:\Jenkins\workspace_proxy
+	7.6 Метки (Label): agent
+	7.7 Использование (Usage): Only build jobs with label expressions matching this node
+	7.8 Способ запуска (Launch method): Launch agent by connecting it to the master (все параметры оставить по умолчанию)
+	7.9 Доступность (Availability): Keep this agent online as much as possible
+	7.10 Node Properties: не включать флаги
+	7.11 нажать кнопку Save
+
 8. Вернуться в ""Управление средами сборки"" http://localhost:8080/computer/
 9. В таблице нажать на proxy
 ===============================================================
@@ -246,7 +246,7 @@ namespace JenkinsAgentRun
 		java -jar agent.jar -jnlpUrl http://localhost:8080/computer/proxy/slave-agent.jnlp -secret 0000000000000000000000000000000000000000000000000000000000000000 -workDir ""C:\Program Files (x86)\Jenkins\workspace_proxy""
 
 11. Запуск агента с помощью JenkinsAgentRun
-	11.1 создайне папку, например C:\Jenkins и поместите в папку файлы:
+	11.1 создайне папку, например C:\Jenkins\ и поместите в папку файлы:
 		agent.jar
 		slave-agent.jnlp
 		JenkinsAgentRun.exe
@@ -256,8 +256,8 @@ namespace JenkinsAgentRun
 		- параметры языка (-Dfile.encoding=UTF8) для поддержки русского языка
 		- путь к файлу agent.jar (http://localhost:8080/jnlpJars/agent.jar)
 		- путь к файлу slave-agent.jnlp (http://localhost:8080/computer/proxy/slave-agent.jnlp)
-		- укажите secret
-		- укажите рабочую папку workDir
+		- укажите secret (0000000000000000000000000000000000000000000000000000000000000000)
+		- укажите рабочую папку workDir (C:\Jenkins\workspace_proxy)
 	11.4 выполните запуск агента с помощью менб ""Действие"" пункт ""Запустить агента""
 	Если все поля были правильно заполнены агент будет запущен
 ===============================================================
