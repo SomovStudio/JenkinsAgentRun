@@ -33,7 +33,7 @@
 - нажать ОК
 
 - Количество процессов-исполнителей (of executors): 2
-- Корень удаленной папки (Remote root directory): C:\Program Files (x86)\Jenkins\workspace_proxy
+- Корень удаленной папки (Remote root directory): C:\Jenkins\workspace
 - Метки (Label): agent
 - Использование (Usage): Only build jobs with label expressions matching this node 
 - Способ запуска (Launch method): Launch agent by connecting it to the master (все параметры оставить по умолчанию)
@@ -50,7 +50,7 @@
 10. Jenkins предлогает несколько способов запуска агента
 - способ №1: выполнить команду javaws http://localhost:8080/computer/proxy/slave-agent.jnlp
 - способ №2: скачать файл agent.jar по ссылке http://localhost:8080/jnlpJars/agent.jar и выполнить команду
-java -jar agent.jar -jnlpUrl http://localhost:8080/computer/proxy/slave-agent.jnlp -secret 0000000000000000000000000000000000000000000000000000000000000000 -workDir "C:\Program Files (x86)\Jenkins\workspace_proxy"
+java -jar agent.jar -jnlpUrl http://localhost:8080/computer/proxy/slave-agent.jnlp -secret 0000000000000000000000000000000000000000000000000000000000000000 -workDir "C:\Jenkins\workspace"
 
 11. Запуск агента с помощью JenkinsAgentRun
 - создайне папку, например C:\Jenkins и поместите в папку файлы: agent.jar, slave-agent.jnlp, JenkinsAgentRun.exe
@@ -65,4 +65,4 @@ java -jar agent.jar -jnlpUrl http://localhost:8080/computer/proxy/slave-agent.jn
 ===============================================================
 12. Настройка Job для работы с агентом
 - включить параметр "Ограничить лейблы сборщиков, которые могут исполнять данную задачу"
-- в поле Label Expression ввести метку proxy
+- в поле Label Expression ввести метку agent
