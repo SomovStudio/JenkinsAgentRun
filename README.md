@@ -24,6 +24,7 @@
   <img src="https://github.com/SomovStudio/JenkinsAgentRun/blob/main/JenkinsAgentRun/JenkinsAgentRun/img/builds.jpg">
   <img src="https://github.com/SomovStudio/JenkinsAgentRun/blob/main/JenkinsAgentRun/JenkinsAgentRun/img/nodes.jpg">
 </p>
+
 1. Открыть "Настройки Jenkins" http://localhost:8080/manage
 2. Перейти в "Глобальные настройки безопасности" http://localhost:8080/configureSecurity/
 3. В разделе Agents включить флаг TCP port for JNLP agents в состояние Случайный/Random
@@ -69,6 +70,7 @@ java -jar agent.jar -jnlpUrl http://localhost:8080/computer/proxy/slave-agent.jn
 <p align="center">
   <img src="https://github.com/SomovStudio/JenkinsAgentRun/blob/main/JenkinsAgentRun/JenkinsAgentRun/img/label.jpg">
 </p>
+
 12. Настройка Job для работы с агентом
 - включить параметр "Ограничить лейблы сборщиков, которые могут исполнять данную задачу"
 - в поле Label Expression ввести метку agent
