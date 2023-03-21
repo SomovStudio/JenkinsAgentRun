@@ -225,7 +225,7 @@ namespace JenkinsAgentRun
 	7.2 включить флаг Permanent Agent
 	7.3 нажать ОК
 	7.4 Количество процессов-исполнителей (of executors): 2
-	7.5 Корень удаленной папки (Remote root directory): C:\Jenkins\workspace_proxy
+	7.5 Корень удаленной папки (Remote root directory): C:\Jenkins\workspace
 	7.6 Метки (Label): agent
 	7.7 Использование (Usage): Only build jobs with label expressions matching this node
 	7.8 Способ запуска (Launch method): Launch agent by connecting it to the master (все параметры оставить по умолчанию)
@@ -243,7 +243,7 @@ namespace JenkinsAgentRun
 		javaws http://localhost:8080/computer/proxy/slave-agent.jnlp
 		
 	10.2 способ №2: скачать файл agent.jar по ссылке http://localhost:8080/jnlpJars/agent.jar	и выполнить команду
-		java -jar agent.jar -jnlpUrl http://localhost:8080/computer/proxy/slave-agent.jnlp -secret 0000000000000000000000000000000000000000000000000000000000000000 -workDir ""C:\Program Files (x86)\Jenkins\workspace_proxy""
+		java -jar agent.jar -jnlpUrl http://localhost:8080/computer/proxy/slave-agent.jnlp -secret 0000000000000000000000000000000000000000000000000000000000000000 -workDir ""C:\Jenkins\workspace""
 
 11. Запуск агента с помощью JenkinsAgentRun
 	11.1 создайне папку, например C:\Jenkins\ и поместите в папку файлы:
@@ -257,7 +257,7 @@ namespace JenkinsAgentRun
 		- путь к файлу agent.jar (http://localhost:8080/jnlpJars/agent.jar)
 		- путь к файлу slave-agent.jnlp (http://localhost:8080/computer/proxy/slave-agent.jnlp)
 		- укажите secret (0000000000000000000000000000000000000000000000000000000000000000)
-		- укажите рабочую папку workDir (C:\Jenkins\workspace_proxy)
+		- укажите рабочую папку workDir (C:\Jenkins\workspace)
 	11.4 выполните запуск агента с помощью менб ""Действие"" пункт ""Запустить агента""
 	Если все поля были правильно заполнены агент будет запущен
 ===============================================================
@@ -265,7 +265,7 @@ namespace JenkinsAgentRun
 ===============================================================
 12. Настройка Job для работы с агентом
 	12.1 включить параметр ""Ограничить лейблы сборщиков, которые могут исполнять данную задачу""
-	12.2 в поле Label Expression ввести метку proxy
+	12.2 в поле Label Expression ввести метку agent
 ";
 
                 writer.Write(readme);

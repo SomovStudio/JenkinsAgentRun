@@ -144,7 +144,7 @@
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.оПрограммеToolStripMenuItem.Text = "Инструкция";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
@@ -271,7 +271,7 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(409, 20);
             this.textBox6.TabIndex = 11;
-            this.textBox6.Text = "C:\\Jenkins\\workspace_proxy";
+            this.textBox6.Text = "C:\\Jenkins\\workspace";
             // 
             // label6
             // 
@@ -373,7 +373,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormJenkinsAgentRun";
-            this.Text = "Jenkins - Agent Run";
+            this.Text = "Jenkins - Agent Run (v1.0)";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
