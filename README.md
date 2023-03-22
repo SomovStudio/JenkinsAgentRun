@@ -51,6 +51,10 @@
 
 Запуск агента (программа JenkinsAgentRun)
 ===============================================================
+<p align="center">
+  <img src="https://github.com/SomovStudio/JenkinsAgentRun/blob/main/JenkinsAgentRun/JenkinsAgentRun/img/run.jpg">
+</p>
+
 10. Jenkins предлогает свой способ запуска агента с помощью команды
 
 java -jar agent.jar -jnlpUrl http://localhost:8080/computer/agent/slave-agent.jnlp -secret 0000000000000000000000 -workDir "C:\Jenkins\workspace"
