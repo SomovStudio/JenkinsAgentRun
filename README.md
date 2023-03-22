@@ -57,7 +57,7 @@
 
 10. Jenkins предлогает свой способ запуска агента с помощью команды
 
-java -jar agent.jar -jnlpUrl http://localhost:8080/computer/agent/slave-agent.jnlp -secret 0000000000000000000000 -workDir "C:\Jenkins\workspace"
+java -jar agent.jar -jnlpUrl http://localhost:8080/computer/agent/slave-agent.jnlp -secret 00000000000000000000000000000000 -workDir "C:\Jenkins\workspace"
 
 
 11. Запуск агента с помощью JenkinsAgentRun
