@@ -51,10 +51,10 @@
 
 Запуск агента (программа JenkinsAgentRun)
 ===============================================================
-10. Jenkins предлогает несколько способов запуска агента
-- способ №1: выполнить команду javaws http://localhost:8080/computer/proxy/slave-agent.jnlp
-- способ №2: скачать файл agent.jar по ссылке http://localhost:8080/jnlpJars/agent.jar и выполнить команду
-java -jar agent.jar -jnlpUrl http://localhost:8080/computer/proxy/slave-agent.jnlp -secret 0000000000000000000000000000000000000000000000000000000000000000 -workDir "C:\Jenkins\workspace"
+10. Jenkins предлогает свой способ запуска агента с помощью команды
+
+java -jar agent.jar -jnlpUrl http://localhost:8080/computer/agent/slave-agent.jnlp -secret 0000000000000000000000 -workDir "C:\Jenkins\workspace"
+
 
 11. Запуск агента с помощью JenkinsAgentRun
 - создайне папку, например C:\Jenkins и поместите в папку файлы: agent.jar, slave-agent.jnlp, JenkinsAgentRun.exe
