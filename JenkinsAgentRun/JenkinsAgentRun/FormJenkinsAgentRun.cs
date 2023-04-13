@@ -387,7 +387,7 @@ namespace JenkinsAgentRun
                 //    writer = new StreamWriter(filename, false, Encoding.GetEncoding("Windows-1251"));
                 //    writer = new StreamWriter(filename, false, Encoding.Default);
 
-                string command = textBox1.Text + " " + textBox2.Text + " -jar " + textBox3.Text + " -jnlpUrl " + textBox4.Text + " -secret " + textBox5.Text + " -workDir \"" + textBox6.Text + "\"";
+                string command = "java " + textBox2.Text + " -jar " + textBox3.Text + " -jnlpUrl " + textBox4.Text + " -secret " + textBox5.Text + " -workDir \"" + textBox6.Text + "\"";
                 writer.Write(command);
                 writer.Close();
                 consoleMessage("Создан файл jenkins_agent_run.bat");
