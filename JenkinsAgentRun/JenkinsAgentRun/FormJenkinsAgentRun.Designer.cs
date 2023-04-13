@@ -63,6 +63,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.createBatFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -85,6 +86,7 @@
             // 
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.сохранитьНастройкиToolStripMenuItem,
+            this.createBatFileToolStripMenuItem,
             this.toolStripSeparator2,
             this.выключитьАгентаToolStripMenuItem1});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
@@ -364,6 +366,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Путь к приложению Java:";
             // 
+            // createBatFileToolStripMenuItem
+            // 
+            this.createBatFileToolStripMenuItem.Name = "createBatFileToolStripMenuItem";
+            this.createBatFileToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.createBatFileToolStripMenuItem.Text = "Создать bat файл";
+            this.createBatFileToolStripMenuItem.Click += new System.EventHandler(this.createBatFileToolStripMenuItem_Click);
+            // 
             // FormJenkinsAgentRun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -376,7 +385,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormJenkinsAgentRun";
-            this.Text = "Jenkins - Agent Run (v1.0)";
+            this.Text = "Jenkins - Agent Run (v1.1)";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -427,6 +436,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createBatFileToolStripMenuItem;
     }
 }
 

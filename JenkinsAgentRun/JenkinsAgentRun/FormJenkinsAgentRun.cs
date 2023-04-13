@@ -11,7 +11,6 @@ using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
 namespace JenkinsAgentRun
 {
@@ -376,6 +375,28 @@ namespace JenkinsAgentRun
         private void Help_FormClosed(object sender, FormClosedEventArgs e)
         {
             help = false;
+        }
+
+        private void createBatFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                StreamWriter writer;
+                writer = new StreamWriter("jenkins_agent_run.bat", false, new UTF8Encoding(false));
+                //    writer = new StreamWriter(filename, false, new UTF8Encoding(true));
+                //    writer = new StreamWriter(filename, false, Encoding.GetEncoding("Windows-1251"));
+                //    writer = new StreamWriter(filename, false, Encoding.Default);
+
+                string command = textBox1.Text + " " + textBox2.Text + " -jar " + textBox3.Text + " -jnlpUrl " + textBox4.Text + " -secret " + textBox5.Text + " -workDir \"" + textBox6.Text + "\"";
+                writer.Write(command);
+                writer.Close();
+                consoleMessage("Создан файл jenkins_agent_run.bat");
+                MessageBox.Show("Создан файл jenkins_agent_run.bat", "Сообщение");
+            }
+            catch (Exception ex)
+            {
+                consoleMessage(ex.Message);
+            }
         }
     }
 }
