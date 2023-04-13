@@ -1,9 +1,9 @@
 # JenkinsAgentRun
 Программа для удобного запуска Jenkins агента
 <br>
-Скачать: https://github.com/SomovStudio/JenkinsAgentRun/releases/download/release/JenkinsAgentRun-1.0.zip
+Скачать: https://github.com/SomovStudio/JenkinsAgentRun/releases/download/release/JenkinsAgentRun-1.1.zip
 <br>
-(последнее обновление 21.03.2023 версия 1.0)
+(последнее обновление 13.04.2023 версия 1.1)
 <hr>
 <p align="center">
   <img src="https://github.com/SomovStudio/JenkinsAgentRun/blob/main/JenkinsAgentRun/JenkinsAgentRun/img/JenkinsAgentRun.png">
