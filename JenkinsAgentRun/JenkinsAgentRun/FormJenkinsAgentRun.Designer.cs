@@ -33,6 +33,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьНастройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createBatFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.выключитьАгентаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.действиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,7 +64,10 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.createBatFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFolderAppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFolderAutorunToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -85,8 +89,12 @@
             // файлToolStripMenuItem
             // 
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.сохранитьНастройкиToolStripMenuItem,
+            this.openFolderAppToolStripMenuItem,
+            this.openFolderAutorunToolStripMenuItem,
+            this.toolStripSeparator3,
             this.createBatFileToolStripMenuItem,
+            this.toolStripSeparator4,
+            this.сохранитьНастройкиToolStripMenuItem,
             this.toolStripSeparator2,
             this.выключитьАгентаToolStripMenuItem1});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
@@ -96,19 +104,26 @@
             // сохранитьНастройкиToolStripMenuItem
             // 
             this.сохранитьНастройкиToolStripMenuItem.Name = "сохранитьНастройкиToolStripMenuItem";
-            this.сохранитьНастройкиToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.сохранитьНастройкиToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
             this.сохранитьНастройкиToolStripMenuItem.Text = "Сохранить настройки";
             this.сохранитьНастройкиToolStripMenuItem.Click += new System.EventHandler(this.сохранитьНастройкиToolStripMenuItem_Click);
+            // 
+            // createBatFileToolStripMenuItem
+            // 
+            this.createBatFileToolStripMenuItem.Name = "createBatFileToolStripMenuItem";
+            this.createBatFileToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.createBatFileToolStripMenuItem.Text = "Создать bat файл";
+            this.createBatFileToolStripMenuItem.Click += new System.EventHandler(this.createBatFileToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(191, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(227, 6);
             // 
             // выключитьАгентаToolStripMenuItem1
             // 
             this.выключитьАгентаToolStripMenuItem1.Name = "выключитьАгентаToolStripMenuItem1";
-            this.выключитьАгентаToolStripMenuItem1.Size = new System.Drawing.Size(194, 22);
+            this.выключитьАгентаToolStripMenuItem1.Size = new System.Drawing.Size(230, 22);
             this.выключитьАгентаToolStripMenuItem1.Text = "Выключить агента";
             this.выключитьАгентаToolStripMenuItem1.Click += new System.EventHandler(this.выключитьАгентаToolStripMenuItem1_Click);
             // 
@@ -366,12 +381,29 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Путь к приложению Java:";
             // 
-            // createBatFileToolStripMenuItem
+            // openFolderAppToolStripMenuItem
             // 
-            this.createBatFileToolStripMenuItem.Name = "createBatFileToolStripMenuItem";
-            this.createBatFileToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.createBatFileToolStripMenuItem.Text = "Создать bat файл";
-            this.createBatFileToolStripMenuItem.Click += new System.EventHandler(this.createBatFileToolStripMenuItem_Click);
+            this.openFolderAppToolStripMenuItem.Name = "openFolderAppToolStripMenuItem";
+            this.openFolderAppToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.openFolderAppToolStripMenuItem.Text = "Открыть папка приложения";
+            this.openFolderAppToolStripMenuItem.Click += new System.EventHandler(this.openFolderAppToolStripMenuItem_Click);
+            // 
+            // openFolderAutorunToolStripMenuItem
+            // 
+            this.openFolderAutorunToolStripMenuItem.Name = "openFolderAutorunToolStripMenuItem";
+            this.openFolderAutorunToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.openFolderAutorunToolStripMenuItem.Text = "Открыть папку автозагрузки";
+            this.openFolderAutorunToolStripMenuItem.Click += new System.EventHandler(this.openFolderAutorunToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(227, 6);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(227, 6);
             // 
             // FormJenkinsAgentRun
             // 
@@ -437,6 +469,10 @@
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createBatFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openFolderAppToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openFolderAutorunToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
     }
 }
 

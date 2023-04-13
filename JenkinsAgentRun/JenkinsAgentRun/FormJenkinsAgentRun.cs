@@ -398,5 +398,29 @@ namespace JenkinsAgentRun
                 consoleMessage(ex.Message);
             }
         }
+
+        private void openFolderAppToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Process.Start(System.IO.Directory.GetCurrentDirectory());
+            }
+            catch (Exception ex)
+            {
+                consoleMessage(ex.Message);
+            }
+        }
+
+        private void openFolderAutorunToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Process.Start(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Startup));
+            }
+            catch (Exception ex)
+            {
+                consoleMessage(ex.Message);
+            }
+        }
     }
 }
